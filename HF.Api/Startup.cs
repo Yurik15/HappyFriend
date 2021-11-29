@@ -109,7 +109,7 @@ namespace HF.Api
                 {
                     options.UseSqlServer(
                        configuration.GetConnectionString("HfDbConnection"),
-                       b => b.MigrationsAssembly("HF.API"));
+                       b => b.MigrationsAssembly("HF.Api"));
                 });
         }
 
