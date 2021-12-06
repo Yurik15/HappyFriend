@@ -1,5 +1,6 @@
 ﻿using HFS.Domain.SeedOfWork;
 using System;
+using System.Collections.Generic;
 
 namespace HF.Domain.Models
 {
@@ -11,9 +12,7 @@ namespace HF.Domain.Models
             string lastname,
             string email,
             string phonenumber,
-            DateTime datebirthday,
-            int userfileId,
-            int roleid
+            DateTime datebirthday
             )
         {
             FirstName = firstname;
@@ -21,8 +20,9 @@ namespace HF.Domain.Models
             Email = email;
             PhoneNumber = phonenumber;
             DateBirthday = datebirthday;
-            UserFileId = userfileId;
-            RoleId = roleid;
+            _usersFiles = new List<UsersFile>();
+            _usersRoles = new List<UsersRole>();
+
 
         }
         public string FirstName { get; private set; }
@@ -30,8 +30,9 @@ namespace HF.Domain.Models
         public string Email { get; private set; }
         public string PhoneNumber { get; private set; }
         public DateTime DateBirthday { get; private set; }
-        public int UserFileId { get; private set; }
-        public int RoleId { get; private set; }
-
+        private List<UsersFile> _usersFiles;
+        private List<UsersRole> _usersRoles;
+        public IReadOnlyList<UsersRole> UserRoles => _usersRoles;
+        public IReadOnlyList<UsersFile> UserFiles => _usersFiles;
     }
 }

@@ -4,14 +4,16 @@ using HFS.Infrastracture.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HF.Api.Migrations
 {
     [DbContext(typeof(HfDbContext))]
-    partial class HfDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211206134236_addUsersFileUsersRoleTable")]
+    partial class addUsersFileUsersRoleTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

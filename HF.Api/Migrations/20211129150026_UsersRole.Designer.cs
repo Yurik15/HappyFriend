@@ -4,14 +4,16 @@ using HFS.Infrastracture.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HF.Api.Migrations
 {
     [DbContext(typeof(HfDbContext))]
-    partial class HfDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211129150026_UsersRole")]
+    partial class UsersRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,12 +76,7 @@ namespace HF.Api.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UsersId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UsersId");
 
                     b.ToTable("UsersFile");
                 });
@@ -99,37 +96,7 @@ namespace HF.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UsersId");
-
                     b.ToTable("UsersRole");
-                });
-
-            modelBuilder.Entity("HF.Domain.Models.UsersFile", b =>
-                {
-                    b.HasOne("HF.Domain.Models.Users", "Users")
-                        .WithMany("UserFiles")
-                        .HasForeignKey("UsersId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("HF.Domain.Models.UsersRole", b =>
-                {
-                    b.HasOne("HF.Domain.Models.Users", "Users")
-                        .WithMany("UserRoles")
-                        .HasForeignKey("UsersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("HF.Domain.Models.Users", b =>
-                {
-                    b.Navigation("UserFiles");
-
-                    b.Navigation("UserRoles");
                 });
 #pragma warning restore 612, 618
         }
