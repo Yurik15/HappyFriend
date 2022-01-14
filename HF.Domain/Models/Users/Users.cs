@@ -36,5 +36,10 @@ namespace HF.Domain.Models
         public IReadOnlyList<UsersFile> UserFiles => _usersFiles;
         public IReadOnlyList<Order> Orders => _orders;
 
+        public List<Order> GetOrders() 
+        {
+            return _orders;
+        }
+
     }
 }
