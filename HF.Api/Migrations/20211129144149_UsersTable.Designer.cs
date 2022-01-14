@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HF.Api.Migrations
 {
     [DbContext(typeof(HfDbContext))]
-    [Migration("20211129142856_UsersTable")]
+    [Migration("20211129144149_UsersTable")]
     partial class UsersTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,12 +57,6 @@ namespace HF.Api.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserFileId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

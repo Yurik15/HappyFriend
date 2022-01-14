@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/HF.Api/bin/Debug/netcoreapp3.1
+/HF.Api/obj
+/HF.Domain/obj
+/HF.Infrastructure/bin/Debug/netcoreapp3.1
+/HF.Infrastructure/obj
+/.vs/HF.Api
+/HF.Domain/bin/Debug/netcoreapp3.1

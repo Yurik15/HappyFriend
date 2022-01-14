@@ -18,6 +18,16 @@ namespace HF.Infrastructure.Domain
                 .HasMany(e => e.UserRoles)
                 .WithOne(e => e.Users)
                 .OnDelete(DeleteBehavior.Cascade);
+            builder
+                .HasMany(e => e.Orders)
+                .WithOne(e => e.Users)
+                .HasForeignKey(e => e.ClientId)
+                .OnDelete(DeleteBehavior.Cascade);
+            builder
+                .HasMany(e => e.Orders)
+                .WithOne(e => e.Users)
+                .HasForeignKey(e => e.FriendId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
 
     }

@@ -4,14 +4,16 @@ using HFS.Infrastracture.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HF.Api.Migrations
 {
     [DbContext(typeof(HfDbContext))]
-    partial class HfDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211215093905_OrdersTable")]
+    partial class OrdersTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

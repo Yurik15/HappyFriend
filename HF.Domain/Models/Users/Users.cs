@@ -22,8 +22,7 @@ namespace HF.Domain.Models
             DateBirthday = datebirthday;
             _usersFiles = new List<UsersFile>();
             _usersRoles = new List<UsersRole>();
-
-
+            _orders = new List<Order>();
         }
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
@@ -32,7 +31,10 @@ namespace HF.Domain.Models
         public DateTime DateBirthday { get; private set; }
         private List<UsersFile> _usersFiles;
         private List<UsersRole> _usersRoles;
+        private List<Order> _orders;
         public IReadOnlyList<UsersRole> UserRoles => _usersRoles;
         public IReadOnlyList<UsersFile> UserFiles => _usersFiles;
+        public IReadOnlyList<Order> Orders => _orders;
+
     }
 }
